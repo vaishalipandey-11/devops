@@ -102,4 +102,12 @@ Memory Trick:
 Disk → PV → VG → LV → Mount
 ```
 
---
+-# 8️⃣ What I Learned
+
+| No | Learning |
+|---|---|
+| 1 | LVM allows flexible disk management |
+| 2 | Storage can be extended without deleting data |
+| 3 | Multiple disks can be combined into one storage pool |
+
+----
