@@ -1,0 +1,124 @@
+1. Installation & Configuration
+| Command                                            | Purpose                         |
+| -------------------------------------------------- | ------------------------------- |
+| `git --version`                                    | Check installed Git version.    |
+| `git config --global user.name "Your Name"`        | Set global username.            |
+| `git config --global user.email "you@example.com"` | Set global email.               |
+| `git config --global init.defaultBranch main`      | Set default branch name.        |
+| `git config --global core.editor vim`              | Set default editor.             |
+| `git config --list`                                | Display all Git configurations. |
+| `git config --global --edit`                       | Edit global configuration file. |
+
+2. Create / Clone Repository
+| Command                    | Purpose                                    |
+| -------------------------- | ------------------------------------------ |
+| `git init`                 | Initialize a new local Git repository.     |
+| `git clone <url>`          | Copy a remote repository to your computer. |
+| `git clone <url> <folder>` | Clone into a specific directory.           |
+
+3. Basic Workflow (Working Tree → Staging → Repository)
+| Command                    | Purpose                                    |
+| -------------------------- | ------------------------------------------ |
+| `git status`               | Show current repository status.            |
+| `git add file`             | Stage a specific file.                     |
+| `git add .`                | Stage all modified files.                  |
+| `git add -A`               | Stage all changes including deletions.     |
+| `git commit -m "message"`  | Save staged changes as a commit.           |
+| `git commit -am "message"` | Stage tracked files and commit.            |
+| `git push`                 | Upload local commits to remote repository. |
+| `git pull`                 | Download and merge remote changes.         |
+| `git fetch`                | Download remote updates without merging.   |
+
+4. Repository Inspection
+| Command              | Purpose                                 |
+| -------------------- | --------------------------------------- |
+| `git status`         | View repository status.                 |
+| `git log`            | Show complete commit history.           |
+| `git log --oneline`  | Display compact commit history.         |
+| `git log --graph`    | Show commit graph.                      |
+| `git log --decorate` | Display branch and tag names.           |
+| `git show`           | Show details of a commit.               |
+| `git diff`           | Compare working tree with staging area. |
+| `git diff --staged`  | Compare staging area with last commit.  |
+| `git blame file`     | Show who modified each line.            |
+| `git reflog`         | Display history of HEAD movements.      |
+
+5. Branching
+| Command                    | Purpose                        |
+| -------------------------- | ------------------------------ |
+| `git branch`               | List local branches.           |
+| `git branch new-branch`    | Create a new branch.           |
+| `git switch new-branch`    | Switch to another branch.      |
+| `git switch -c new-branch` | Create and switch to a branch. |
+| `git checkout branch`      | Switch branch (older command). |
+| `git checkout -b branch`   | Create and switch branch.      |
+| `git branch -d branch`     | Delete merged branch.          |
+| `git branch -D branch`     | Force delete branch.           |
+| `git branch -m new-name`   | Rename current branch.         |
+
+7. Merge
+| Command                    | Purpose                                   |
+| -------------------------- | ----------------------------------------- |
+| `git merge branch`         | Merge another branch into current branch. |
+| `git merge --no-ff branch` | Always create a merge commit.             |
+| `git merge --abort`        | Cancel an unfinished merge.               |
+
+8. Rebase
+| Command                 | Purpose                                  |
+| ----------------------- | ---------------------------------------- |
+| `git rebase main`       | Replay commits on top of another branch. |
+| `git rebase -i HEAD~3`  | Interactively edit last three commits.   |
+| `git rebase --continue` | Continue after resolving conflicts.      |
+| `git rebase --abort`    | Cancel current rebase.                   |
+| `git rebase --skip`     | Skip conflicting commit.                 |
+
+9. Cherry-pick
+| Command                      | Purpose                             |
+| ---------------------------- | ----------------------------------- |
+| `git cherry-pick <commit>`   | Copy a commit to current branch.    |
+| `git cherry-pick A B`        | Copy multiple commits.              |
+| `git cherry-pick --continue` | Continue after conflict resolution. |
+| `git cherry-pick --abort`    | Cancel cherry-pick operation.       |
+
+10. Undo Changes
+| Command                     | Purpose                                           |
+| --------------------------- | ------------------------------------------------- |
+| `git restore file`          | Discard unstaged file changes.                    |
+| `git restore --staged file` | Remove file from staging area.                    |
+| `git reset --soft HEAD~1`   | Undo commit but keep staged changes.              |
+| `git reset --mixed HEAD~1`  | Undo commit and unstage changes.                  |
+| `git reset --hard HEAD~1`   | Undo commit and discard changes.                  |
+| `git revert <commit>`       | Create a new commit that reverses another commit. |
+| `git commit --amend`        | Modify the most recent commit.                    |
+
+11. Stash
+| Command           | Purpose                               |
+| ----------------- | ------------------------------------- |
+| `git stash`       | Save uncommitted changes temporarily. |
+| `git stash list`  | List saved stashes.                   |
+| `git stash apply` | Restore stash without removing it.    |
+| `git stash pop`   | Restore and remove latest stash.      |
+| `git stash drop`  | Delete a stash.                       |
+| `git stash clear` | Delete all stashes.                   |
+
+13. Conflict Resolution
+| Command                      | Purpose                                         |
+| ---------------------------- | ----------------------------------------------- |
+| `git status`                 | View files with merge conflicts.                |
+| `git add file`               | Mark resolved file as staged.                   |
+| `git merge --continue`       | Continue merge after resolving conflicts.       |
+| `git rebase --continue`      | Continue rebase after resolving conflicts.      |
+| `git cherry-pick --continue` | Continue cherry-pick after resolving conflicts. |
+
+14. Advanced Commands
+| Command            | Purpose                                       |
+| ------------------ | --------------------------------------------- |
+| `git clean -fd`    | Remove untracked files and directories.       |
+| `git bisect start` | Begin binary search for a bad commit.         |
+| `git bisect good`  | Mark a commit as good.                        |
+| `git bisect bad`   | Mark a commit as bad.                         |
+| `git worktree add` | Create another working directory.             |
+| `git archive`      | Create an archive of repository contents.     |
+| `git gc`           | Clean and optimize repository storage.        |
+| `git fsck`         | Check repository integrity.                   |
+| `git reflog`       | Recover lost commits using reference history. |
